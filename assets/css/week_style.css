@@ -1,0 +1,39 @@
+#habit-status-container{
+    font-family: sans-serif;
+    display:flex;
+    flex-direction: column;
+}
+
+.single-habit-row{
+    display:flex;
+    justify-content: space-between;
+    background-color:azure;
+    margin: 20px 0;
+}
+
+.habit-card{
+    /* background-color:rgb(66, 62, 62); */
+    color:white;
+    /* padding: 5px; */
+    border-radius: 10px;
+    cursor: pointer;
+}
+.date{
+    background-color: black;
+    padding:10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.select-status{
+    padding:10px;
+    /* border-radius: 10px; */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.done{
+    background-color: green;
+}
+.notDone{
+    background-color: red;
+}

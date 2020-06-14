@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="/css/week_style.css">
+<a href="/">Detail View</a>
+        <a href="/habits/weekview">Week View</a>
+<div id="habit-status-container">
+    <%for(habit of habits){%>
+        <div class="single-habit-row" id="<%= habit._id%>">
+            <div class="habit-name">
+                <%=habit.name%>
+            </div>
+            <% for (i in dates){%>
+                <div class="habit-card" id="<%= i%>">
+                    <div class="date"><%=dates[6-i]%></div>
+                    <select class="select-status <%=habit.status[i]%>"  id="<%= habit._id +'_' + (6-i) %>" >
+                            <%if(habit.status[i] === "none"){%>
+                                <option value="none" selected>None</option>
+                            <%}else{%>
+                                <option value="done">None</option>
+                            <%}%>
+                            <%if(habit.status[i] === "done"){%>
+                                <option value="done" selected>Done</option>
+                            <%}else{%>
+                                <option value="done">Done</option>
+                            <%}%>
+                            <%if(habit.status[i] === "notDone"){%>
+                                <option value="notDone" selected>Not Done</option>
+                            <%}else{%>
+                                <option value="notDone">Not Done</option>
+                            <%}%>
+        
+                    </select>
+                </div>
+            <%}%>
+        </div>
+    <%}%>
+</div>
+<script src="/js/week.js"></script>
