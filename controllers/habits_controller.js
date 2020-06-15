@@ -6,6 +6,7 @@ let formatDate = function (date) {
     return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d);
 }
 let days = ["Sun","Mon", "Tues", "Wed","Thurs", "Fri", "Sat"]
+//To create a habit
 module.exports.create =async function(req, res){
     console.log(req.body);
     console.log(req.user);
@@ -35,7 +36,7 @@ module.exports.create =async function(req, res){
     }
     
 }
-
+//To display all habbit iun week view
 module.exports.display = async function(req, res){
     try{
         let habits = await Habit.find({});
@@ -64,7 +65,7 @@ module.exports.display = async function(req, res){
     }
     
 }
-
+//To update the status of the habit
 module.exports.update = async function(req, res){
     try{
         console.log(req.body);
@@ -83,6 +84,7 @@ module.exports.update = async function(req, res){
         return res.redirect('back');
     }
 }
+//To delete a habit
 module.exports.delete =async function(req, res){
     console.log(req.params);
     try{
