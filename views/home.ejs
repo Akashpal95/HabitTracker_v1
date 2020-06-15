@@ -1,20 +1,17 @@
 <link rel="stylesheet" href="/css/home.css">
 <div id = "home-container">
     <% if(locals.user){%>
-        <a href="/">Detail View</a>
-        <a href="/habits/weekview">Week View</a>
         <div id="form-container">
             <form id="add-habit-form" action="/habits/create" method="POST">
-                <input type="text" name="habitName" placeholder="Write a habit." required>
+                <input type="text" id="habit-name" name="habitName" placeholder="Write a habit." required>
                 <input type="submit" id="add-btn" name="add-button" value="Add">
             </form>
-            <button id="del-btn" name="delete-button">Delete</button>
         </div>
         <div id="habit-container">
             <%for (habit of habits){%>
-                <div class="habit-card" style="display:flex;align-items: center;">
-                    <a class="delete-habit-button" href="habits/delete/<%=habit._id%>">X</a>
-                    <p><%=habit.name%></p>
+                <div class="habit-card" id = "habit-card-<%=habit._id%>" style="display:flex;align-items: center;">
+                    <p class="habit-name-container"><%=habit.name%></p>
+                    <a class="delete-habit-button" href="habits/delete/<%=habit._id%>"><ion-icon name="trash-outline"></ion-icon></a>
                 </div>
             <%}%>
         </div>
@@ -22,5 +19,6 @@
         <p>Sign in to continue.</p>
     <%}%>
 </div>
+<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 <script src="/js/home_habits.js"></script>
 

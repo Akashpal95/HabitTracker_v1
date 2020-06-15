@@ -1,12 +1,11 @@
 <link rel="stylesheet" href="/css/week_style.css">
-<a href="/">Detail View</a>
-        <a href="/habits/weekview">Week View</a>
 <div id="habit-status-container">
     <%for(habit of habits){%>
+    <div class="habit-row">
+        <div class="habit-name">
+            <%=habit.name%>
+        </div>
         <div class="single-habit-row" id="<%= habit._id%>">
-            <div class="habit-name">
-                <%=habit.name%>
-            </div>
             <% for (i in dates){%>
                 <div class="habit-card" id="<%= i%>">
                     <div class="date"><%=dates[6-i]%></div>
@@ -31,6 +30,8 @@
                 </div>
             <%}%>
         </div>
+    </div>
     <%}%>
+    
 </div>
 <script src="/js/week.js"></script>

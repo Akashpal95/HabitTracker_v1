@@ -5,6 +5,7 @@ let formatDate = function (date) {
     var y = date.getFullYear();
     return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d);
 }
+let days = ["Sun","Mon", "Tues", "Wed","Thurs", "Fri", "Sat"]
 module.exports.create =async function(req, res){
     console.log(req.body);
     console.log(req.user);
@@ -49,7 +50,7 @@ module.exports.display = async function(req, res){
         for(let i =0;i < 7;i++){
             let d = new Date();
             d.setDate(d.getDate()-i);
-            dates[i] = formatDate(d);
+            dates[i] = days[d.getDay()];
         }
         // console.log(dates);
         // console.log(habits);
@@ -79,6 +80,23 @@ module.exports.update = async function(req, res){
 
     }catch(error){
         console.log('Error : ', error);
+        return res.redirect('back');
+    }
+}
+module.exports.delete =async function(req, res){
+    console.log(req.params);
+    try{
+        let habit = await Habit.findById(req.params.id);
+        habit.remove();
+        if(req.xhr){
+            return res.status(200).json({
+                habit_id: habit._id,
+                message:"Habit is deleted!"
+            });
+        }
+        // return res.redirect('back');
+    }catch(error){
+        console.log("Error : ", error);
         return res.redirect('back');
     }
 }

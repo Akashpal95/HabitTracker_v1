@@ -1,0 +1,51 @@
+#home-container{
+    display:flex;
+    flex-direction: column;
+    background-color: #67ecab;
+    padding:20px;
+    border-radius:10px;
+}
+
+.habit-card{
+    width:30vw;
+    height:10vh;
+    background-color:#9dfed0;
+    border-radius:10px;
+    margin:10px;
+    color:#005c85;
+    font-size:1.5rem;
+    /* padding:10px; */
+    justify-content: space-between;
+}
+#add-habit-form{
+    margin:10px;
+    /* width:100%; */
+    display:flex;
+    justify-content: space-between;
+}
+#habit-name{
+    border:none;
+    width:20vw;
+    border-radius: 5px;
+    background-color:  #9dfed0;
+    color:#005c85;
+}
+input:focus{
+    outline:none;
+}
+#add-btn{
+    border:none;
+    background-color:#005c85;
+    color:white;
+    padding:10px;
+    border-radius:5px;
+}
+.habit-name-container{
+    margin:10px;
+}
+ion-icon{
+    color:#f76172  ;
+    font-size: 2rem;
+    margin:10px;
+}
+

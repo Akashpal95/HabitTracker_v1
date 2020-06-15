@@ -1,5 +1,12 @@
 <header>
     <a href="/">Habit Tracker</a>
+    <% if (locals.user){%>
+        <div class="nav-container">
+            <a class="nav-links" href="/">Detail View</a>
+            <a class="nav-links" href="/habits/weekview">Week View</a>
+        </div>
+
+    <%}%>
     <ul>
         <% if (locals.user){%>
             <li>

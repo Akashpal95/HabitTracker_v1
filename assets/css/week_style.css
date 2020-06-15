@@ -2,14 +2,22 @@
     font-family: sans-serif;
     display:flex;
     flex-direction: column;
+    
+}
+.habit-row{
+    background-color:#9dfed0;/* #005c85;*/
+    margin:10px;
+    padding:10px;
+    border-radius:10px;
 }
 
 .single-habit-row{
     display:flex;
     justify-content: space-between;
-    background-color:azure;
-    margin: 20px 0;
+    /* background-color:azure; */
+    /* margin: 20px 0; */
 }
+
 
 .habit-card{
     /* background-color:rgb(66, 62, 62); */
@@ -17,23 +25,38 @@
     /* padding: 5px; */
     border-radius: 10px;
     cursor: pointer;
+    margin:10px;
+}
+.habit-name{
+    color:#005c85; 
+    /* #9dfed0; */
+    font-size: 1rem;
+    font-weight: 600;
+    margin-left:10px;
 }
 .date{
-    background-color: black;
-    padding:10px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    color:#005c85;
+    /* #67ecab; */
+    text-align: center;
+    margin-bottom: 10px;
+    font-size:0.8rem;
 }
 .select-status{
     padding:10px;
-    /* border-radius: 10px; */
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-radius: 10px;
+    border:none;
 }
-
+select:focus{
+    outline: none;
+}
 .done{
-    background-color: green;
+    /* background-color: #2aefb5; */
+    border :2px solid #2aefb5;
+    color:#2aefb5;
 }
 .notDone{
-    background-color: red;
+    /* background-color: #f76172;
+    color:white; */
+    border :2px solid #f76172;
+    color:#f76172;
 }

@@ -1,7 +1,7 @@
 
 
 {
-
+    //change the status of a habit
     let changeStatus = function(statusCard){
         let id =statusCard.id;
         let temp = id.split("_");
@@ -35,6 +35,7 @@
             }
         });
     }
+    //Set event for all select items
     let eventSetter = function(){
         let allSelect = $('.select-status');
         for (let each of allSelect){
